@@ -10,7 +10,10 @@ const PORT = process.env.PORT || 3001;
 const connection = require('./config/connection');
 
 
-const routes = require('./routes');
+const routeOne = require('./routes/api/burgers_routes');
+const routeTwo = require('./routes/html/html_routes');
+
+
 
 
 app.use(express.json());
@@ -21,7 +24,7 @@ app.engine('handlebars', expressHandlebars({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 
-app.use(routes);
+app.use(routeOne, routeTwo);
 
 // connect to db
 connection.connect(err => {

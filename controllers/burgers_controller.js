@@ -1,7 +1,7 @@
 const connection = require('../config/connection');
 
 
-const getBurgers = () => {
+const getBurger = () => {
   return new Promise((resolve, reject) => {
     connection.query('SELECT * FROM burgers', (err, burgerdata) => {
       if (err) {
