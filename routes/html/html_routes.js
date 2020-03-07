@@ -1,12 +1,12 @@
 const router = require('express').Router();
 
 
-const { getBurgers } = require('../../controllers/burgers_controller');
+const { getBurger } = require('../../controllers/burgers_controller');
 
 
 router.get('/', (req, res) => {
   
-  getBurgers()
+  getBurger()
     .then(burgerdata => {
       res.render('home', { burgers: burgerdata });
     })
