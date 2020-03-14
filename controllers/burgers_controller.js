@@ -46,7 +46,7 @@ const updateBurger = (burgerObj, burgerId) => {
 };
 
 // DELETE A CAT
-const deleteBurger = catId => {
+const deleteBurger = burgerId => {
   return new Promise((resolve, reject) => {
     connection.query('DELETE FROM burgers WHERE id = ?', [burgerId], (err, burgerdata) => {
       if (err) {
